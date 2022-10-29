@@ -106,6 +106,9 @@ public class PixelBoardScript : MonoBehaviour
                 }
                 break;
             case 2:
+                if((ix % 6 == _x - 1 || ix % 6 == _x + 1) && (ix / 6 == _y - 1 || ix / 6 == _y + 1))
+                    goto badpos;
+
                 if(ix % 6 == _x - 1)
                 {
                     if(_mazeWalls[_mz][0][_y * 6 + _x - 1])
@@ -150,17 +153,17 @@ public class PixelBoardScript : MonoBehaviour
                         _pixels[6 * _y + _x].Color = Color.white;
                     }
                 }
-                else if (ix != 6 * _y + _x)
-                {
-                    Log("Button " + ix + " pressed for stage 2. That's not a possible move. Position reset.");
-                    StartCoroutine(Strike(2));
-                    break;
-                }
+                else if(ix != 6 * _y + _x)
+                    goto badpos;
 
                 Log("Button " + ix + " pressed for stage 2.");
 
                 if(_y == _gy && _x == _gx)
                     StartCoroutine(Solve());
+                break;
+                badpos:
+                Log("Button " + ix + " pressed for stage 2. That's not a possible move. Position reset.");
+                StartCoroutine(Strike(2));
                 break;
                 wall:
                 Log("Button " + ix + " pressed for stage 2. There's a wall there. Position reset.");
