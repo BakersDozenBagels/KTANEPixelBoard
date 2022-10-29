@@ -66,7 +66,7 @@ public class PixelBoardScript : MonoBehaviour
                     ++mx;
                     break;
                 case 'W':
-                    mx += 1;
+                    mx += 2;
                     break;
             }
         }
