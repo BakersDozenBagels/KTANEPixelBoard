@@ -316,6 +316,6 @@ public class PixelBoardScript : MonoBehaviour
 
     private void Log(string msg)
     {
-        //Debug.Log("[Pixel Board #" + _id + "] " + msg);
+        Debug.Log("[Pixel Board #" + _id + "] " + msg);
     }
 }
