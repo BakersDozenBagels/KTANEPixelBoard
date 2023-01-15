@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class PixelBoardScript : MonoBehaviour
 {
-    [SerializeField]
+    [SerializeField, RummageNoRemove, RummageNoRename]
     private TextAsset _puzzles;
 
     private int _id = ++_idc;
@@ -33,6 +33,7 @@ public class PixelBoardScript : MonoBehaviour
         new List<bool[]>(2) { "#    ### ###  # #### # #### ## # # #".Select(c => c == '#').ToArray(), "     #  #  ## #  ### # #  ## #    ##".Select(c => c == '#').ToArray() }
     };
 
+    [RummageNoRemove, RummageNoRename]
     private void Start()
     {
         KMSelectable[] btns = GetComponent<KMSelectable>().Children;
