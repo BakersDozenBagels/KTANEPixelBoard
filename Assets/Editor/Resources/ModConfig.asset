@@ -18,6 +18,6 @@ MonoBehaviour:
 
 
     Module id: pixelBoard'
-  version: 1.4
+  version: 1.5
   outputFolder: build
   previewImage: {fileID: 2800000, guid: 73335f374d6e1ce4eb202d95eaabb42a, type: 3}

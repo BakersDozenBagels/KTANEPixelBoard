@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(KMSelectable))]
 public class PixelScript : MonoBehaviour
 {
-    [SerializeField, RummageNoRemove, RummageNoRename]
+    [SerializeField]
     private Renderer _base;
 
     private bool _highlighted;
@@ -20,8 +20,7 @@ public class PixelScript : MonoBehaviour
                 ShowColor(value);
         }
     }
-
-    [RummageNoRemove, RummageNoRename]
+    
     private void Start()
     {
         Color = Color.black;
